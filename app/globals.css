@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for firmos.ai branding - black, white, and silver theme */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.1 0 0); /* Deep black text */
+  --card: oklch(0.98 0 0); /* Very light gray card background */
+  --card-foreground: oklch(0.1 0 0); /* Deep black text on cards */
+  --popover: oklch(1 0 0); /* White popover background */
+  --popover-foreground: oklch(0.1 0 0); /* Black text in popovers */
+  --primary: oklch(0.1 0 0); /* Deep black primary */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.5 0 0); /* Medium silver secondary */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+  --muted: oklch(0.95 0 0); /* Light silver muted */
+  --muted-foreground: oklch(0.4 0 0); /* Dark silver muted text */
+  --accent: oklch(0.2 0 0); /* Dark charcoal accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.577 0.245 27.325); /* Red for errors */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.9 0 0); /* Light silver border */
+  --input: oklch(1 0 0); /* White input background */
+  --ring: oklch(0.2 0 0 / 0.5); /* Dark focus ring */
+
+  /* Updated business pillar colors to complement firmos.ai silver theme */
+  --color-biz-dev: oklch(0.3 0 0); /* Dark charcoal for Business Development */
+  --color-talent: oklch(0.4 0 0); /* Medium charcoal for Talent */
+  --color-operations: oklch(0.6 0 0); /* Light charcoal for Operations */
+
+  --chart-1: oklch(0.3 0 0); /* Dark charcoal */
+  --chart-2: oklch(0.4 0 0); /* Medium charcoal */
+  --chart-3: oklch(0.6 0 0); /* Light charcoal */
+  --chart-4: oklch(0.7 0 0); /* Lighter silver */
+  --chart-5: oklch(0.8 0 0); /* Very light silver */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.1 0 0);
+  --sidebar-primary: oklch(0.2 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.5 0 0);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.2 0 0 / 0.5);
+}
+
+.dark {
+  /* Updated dark mode colors for firmos.ai branding */
+  --background: oklch(0.05 0 0); /* Very dark background */
+  --foreground: oklch(0.95 0 0); /* Light text */
+  --card: oklch(0.1 0 0); /* Dark card background */
+  --card-foreground: oklch(0.95 0 0); /* Light text on cards */
+  --popover: oklch(0.1 0 0); /* Dark popover background */
+  --popover-foreground: oklch(0.95 0 0); /* Light text in popovers */
+  --primary: oklch(0.95 0 0); /* Light primary */
+  --primary-foreground: oklch(0.05 0 0); /* Dark text on primary */
+  --secondary: oklch(0.2 0 0); /* Dark secondary */
+  --secondary-foreground: oklch(0.95 0 0); /* Light text on secondary */
+  --muted: oklch(0.15 0 0); /* Dark muted */
+  --muted-foreground: oklch(0.6 0 0); /* Medium silver muted text */
+  --accent: oklch(0.8 0 0); /* Light accent */
+  --accent-foreground: oklch(0.05 0 0); /* Dark text on accent */
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.2 0 0); /* Dark border */
+  --input: oklch(0.15 0 0); /* Dark input background */
+  --ring: oklch(0.8 0 0 / 0.5); /* Light focus ring */
+
+  /* Dark mode business pillar colors */
+  --color-biz-dev: oklch(0.7 0 0); /* Light silver for Business Development */
+  --color-talent: oklch(0.6 0 0); /* Medium silver for Talent */
+  --color-operations: oklch(0.5 0 0); /* Darker silver for Operations */
+
+  --chart-1: oklch(0.7 0 0);
+  --chart-2: oklch(0.6 0 0);
+  --chart-3: oklch(0.5 0 0);
+  --chart-4: oklch(0.4 0 0);
+  --chart-5: oklch(0.3 0 0);
+  --sidebar: oklch(0.1 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.8 0 0);
+  --sidebar-primary-foreground: oklch(0.05 0 0);
+  --sidebar-accent: oklch(0.2 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: oklch(0.8 0 0 / 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Added business pillar color tokens */
+  --color-biz-dev: var(--color-biz-dev);
+  --color-talent: var(--color-talent);
+  --color-operations: var(--color-operations);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
